@@ -1,0 +1,55 @@
+  <h1> <span class="badge badge-secondary">Language filter applied</span></h1>
+
+
+
+<div class="container-fluid">
+  <button type="button" class="btn btn-outline-secondary" (click)="goback()">Go Back</button><br>
+  <div *ngIf="allcountrydata.length>0" >
+<div class="row">
+    
+      <div *ngFor="let data of allcountrydata" class="col-lg-4 col-md-6 ">
+
+        
+             
+             <div class="card cardd country regions">
+                <div class="card-body">
+                      <a routerLink="/All-country-view/:regions/individual/{{data.name}}"> <img class="card-img-top img-thumbnai " src={{data.flag}} height="200px" alt="Card image cap"></a>
+                    <h5 class="card-title" style="text-align: center;"></h5>
+                    <ul class="list-group list-group-flush ">
+                        <li class="list-group-item">
+                            <h5 class="card-title">Country Name: {{data.name}}</h5>
+                        </li>
+                        <li class="list-group-item">
+                              <h5 class="card-title">Currencies: </h5>
+                              <ul *ngFor="let c of data.currencies" class="list-group">
+                                       <li class="list-group-item" routerLink="/All-country-view/:regions/currency/{{c.code}}"> <button type="button" class="btn btn-outline-secondary"><b>code :</b> {{c.code}}  <b>name:</b> {{c.name}}   [   {{c.symbol}} ]</button></li>
+                              </ul>
+                          </li>
+
+                          <li class="list-group-item">
+                                  <h5 class="card-title">Languages: </h5>
+                                  <ul *ngFor="let c of data.languages" class="list-group">
+                                    <li class="list-group-item" routerLink="/All-country-view/:regions/language/{{c.iso639_1}}"> <button type="button" class="btn btn-outline-secondary"><b>{{c.name}}</b>  </button></li>
+                                  </ul>
+                          </li>
+                        <li class="list-group-item">
+                            <h5>capital: {{data.capital }}</h5>
+                        </li>
+                        <li class="list-group-item">
+                            <h5>Sub regions: {{data.subregion}}</h5>
+                        </li>
+                        <li class="list-group-item">
+                            <h5>Time Zones: {{data.timezones }}</h5>
+                        </li>
+                    </ul>
+                
+                  </div>
+              </div>
+           
+       </div>
+  </div>
+</div>
+</div>
+
+
+

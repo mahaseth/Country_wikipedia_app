@@ -1,0 +1,32 @@
+
+      <div class="container-fluid ">
+            <nav class="navbar navbar-dark bg-dark text-center fixed-top">
+                <a class="navbar-brand text-center" style="font-size: 2rem;  text-align: center; color:aquamarine;">
+                    <a href="#" class="heading"><h2> <span class="badge badge-secondary">World Regional Information</span></h2></a>
+                </a>
+              
+                      <form class="form-inline">
+                                    
+                                            <label for="exampleFormControlSelect1" style="color:aliceblue; margin-right:2rem;" >select Search category </label>
+                                            <select class="form-control" id="exampleFormControlSelect1"    (change)="ChangingValue($event)" [value]='0'   >
+                                              <option value=0>Choose search category</option>
+                                              <option value=1 >Regions</option>
+                                              <option value=2>Country</option>
+                                              <option value=3>Currency Code</option>
+                                            </select>
+                    
+ 
+                         <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" [(ngModel)]="search_data" name="search_data"  >
+                         <button class="btn btn-outline-success my-2 my-sm-0" type="submit" (click)="searchFilter()">Search</button>
+                     </form>
+              
+        
+            
+            </nav>
+          </div>
+          <br>
+          <br><br>
+          <br>
+
+ <router-outlet></router-outlet>
+

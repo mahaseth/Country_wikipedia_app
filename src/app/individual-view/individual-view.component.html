@@ -1,0 +1,67 @@
+<div class="container">
+    <a (click)="goback()" ><button class="btn btn-warning" >Go back</button></a>
+    <div *ngIf="countrydata.length>0; then ifblock else elseblock" >
+      </div>
+    <ng-template #ifblock>
+
+        <div class="row">
+            <div class="col-12">        
+                <div class="card " style="text-align:justify;" >
+                <img class="card-img-top" src={{countrydata[0].flag}} alt="Card image cap" style="height:30rem;">
+                <div class="card-body">
+                  <h5 class="card-title"><h2 class="card-title"><span class="badge badge-secondary">Country Name</span> : {{countrydata[0].name}}</h2></h5>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <h2 class="card-title"> <span class="badge badge-secondary">Currencies:</span> </h2>
+                        <ul *ngFor="let c of countrydata[0].currencies" class="list-group">
+                                 <li class="list-group-item" routerLink="/All-country-view/:regions/currency/{{c.code}}"> <button type="button" class="btn btn-outline-secondary"><b>code :</b> {{c.code}}  <b>name:</b> {{c.name}}   [   {{c.symbol}} ]</button></li>
+                        </ul>
+                    </li>
+                    <li class="list-group-item">
+                        <h2 class="card-title"> <span class="badge badge-secondary">Languages: </span></h2>
+                        <ul *ngFor="let c of countrydata[0].languages" class="list-group">
+                                 <li class="list-group-item" routerLink="/All-country-view/:regions/language/{{c.iso639_1}}"> <button type="button" class="btn btn-outline-secondary"><b>{{c.name}}</b> </button></li>
+                        </ul>
+                </li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">Capital</span>: {{countrydata[0].capital}}</h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">Region</span>: {{countrydata[0].region}}</h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">Population</span>: {{countrydata[0].population}}</h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">Native Name</span>: {{countrydata[0].nativeName}}</h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">Numeric Code</span>: {{countrydata[0].numericCode}}</h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">Sub Region</span>:  {{countrydata[0].subregion}}</h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">Area</span>: {{countrydata[0].area}}</h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">demonym</span>: {{countrydata[0].demonym}}</h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">cioc</span>: {{countrydata[0].cioc}}</h2></li>
+            
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">Alfa2 code</span>: {{countrydata[0].alpha2Code}}</h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">Alfa 3 code</span>: {{countrydata[0].alpha3Code}}</h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">Borders</span>: {{countrydata[0].borders}}</h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">top Level Domain</span>: {{countrydata[0].topLevelDomain}}</h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">callingCodes</span>: {{countrydata[0].callingCodes}}</h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">altSpellings</span>: {{countrydata[0].altSpellings}}</h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">timezones</span>: {{countrydata[0].timezones}}</h2></li>
+          
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">Country Name: {{countrydata[0].name}}</span></h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">Country Name: {{countrydata[0].name}}</span></h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">Country Name: {{countrydata[0].name}}</span></h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">Country Name: {{countrydata[0].name}}</span></h2></li>
+                  <li class="list-group-item"><h2 class="card-title"><span class="badge badge-secondary">Country Name: {{countrydata[0].name}}</span></h2></li>
+      
+                </ul>
+               </div>
+             </div>
+       
+              
+        
+        
+        
+        
+               </div> 
+      
+      
+    </ng-template>
+    
+    <ng-template #elseblock> <h1> <span class="badge badge-secondary">Sorry country name didnt match </span></h1></ng-template>
+
+  </div>

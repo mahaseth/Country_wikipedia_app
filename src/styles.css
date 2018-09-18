@@ -1,0 +1,41 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    background-color: #69bfd8;
+  }
+.regions{
+    opacity: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.regions:hover img {
+    opacity: 0.3;
+  }
+  .regions:hover .middle {
+    opacity: 1;
+  }
+.middle {
+    transition: .5s ease;
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+  }
+ .country{
+   margin-top: 1rem;
+ }
+a:hover{
+  cursor: pointer;
+  text-decoration: none;
+  color:black;
+}
+a{
+  text-decoration: white;
+  color:#5a6268;
+}
